@@ -11,15 +11,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PersonQueries {
 
-  private static final String URL = "jdbc:derby:AddressBook"; // default URL
-  private static final String USERNAME = "nameuser"; // default username
-  private static final String PASSWORD = "wordpass"; // default password
+  private static final String URL = "jdbc:derby:AddressBook";
+  private static final String USERNAME = "user";
+  private static final String PASSWORD = "pass";
 
   private Connection connection = null; // manages connection
   private PreparedStatement selectAllPeople = null;
@@ -28,7 +29,10 @@ public class PersonQueries {
 
   // constructor
   public PersonQueries() {
+
     try {
+      Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+      // Class.forName("org.apache.jdbc.derby.EmbeddedDriver");
       connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
       // create query that selects all entries in the AddressBook
       selectAllPeople =

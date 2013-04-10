@@ -19,7 +19,7 @@ ID:     Task Six
 Create: Object-oriented application with UML
 Docs:   Java™ How to Program, Seventh Edition & OOAD_Example
 Chap:   2 & 3. Software Engineering Case Study
-Page:   63 - 522
+Page:   63 - 522 & 1215 - x
 Date:   April 2013
 ```
 
