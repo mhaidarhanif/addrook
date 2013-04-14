@@ -118,9 +118,9 @@ public class AddressBookDisplay extends JFrame {
         new ActionListener() {
           public void actionPerformed(ActionEvent evt) {
             nextButtonActionPerformed(evt);
-          } // end method actionPerformed
-        } // end anonymous inner class
-    ); // end call to addActionListener
+          }
+        }
+    );
     navigatePanel.add(nextButton);
     add(navigatePanel);
 
@@ -158,8 +158,8 @@ public class AddressBookDisplay extends JFrame {
         new ActionListener() {
           public void actionPerformed(ActionEvent evt) {
             queryButtonActionPerformed(evt);
-          } // end method actionPerformed
-        } // end anonymous inner class
+          }
+        }
     );
     queryPanel.add(queryButton);
     queryPanel.add(Box.createHorizontalStrut(5));
@@ -170,8 +170,8 @@ public class AddressBookDisplay extends JFrame {
         new ActionListener() {
           public void actionPerformed(ActionEvent evt) {
             browseButtonActionPerformed(evt);
-          } // end method actionPerformed
-        } // end anonymous inner class
+          }
+        }
     );
     add(browseButton);
     insertButton.setText("Insert New Entry");
@@ -179,8 +179,8 @@ public class AddressBookDisplay extends JFrame {
         new ActionListener() {
           public void actionPerformed(ActionEvent evt) {
             insertButtonActionPerformed(evt);
-          } // end method actionPerformed
-        } // end anonymous inner class
+          }
+        }
     );
     add(insertButton);
 

@@ -11,16 +11,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PersonQueries {
 
-  private static final String URL = "jdbc:derby:AddressBook";
-  private static final String USERNAME = "user";
-  private static final String PASSWORD = "pass";
+  public static final String driver = "org.sqlite.JDBC";
+  private static final String url = "jdbc:sqlite:addressbook.db";
 
   private Connection connection = null; // manages connection
   private PreparedStatement selectAllPeople = null;
@@ -31,9 +30,8 @@ public class PersonQueries {
   public PersonQueries() {
 
     try {
-      Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-      // Class.forName("org.apache.jdbc.derby.EmbeddedDriver");
-      connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+      Class.forName(driver).newInstance();
+      connection = DriverManager.getConnection(url);
       // create query that selects all entries in the AddressBook
       selectAllPeople =
           connection.prepareStatement(
@@ -48,9 +46,20 @@ public class PersonQueries {
               "INSERT INTO Addresses " +
               "( FirstName, LastName, Email, PhoneNumber ) " +
               "VALUES ( ?, ?, ?, ? )");
-    } catch (SQLException sqlException) {
-      sqlException.printStackTrace();
-      System.exit(1);
+    } catch (SQLException sqle) {
+      System.err.println("\nUnable to use SQL " + driver);
+      sqle.printStackTrace();
+      sqle.printStackTrace(System.err);
+    } catch (ClassNotFoundException cnfe) {
+      System.err.println("\nUnable to load the JDBC driver " + driver);
+      System.err.println("Please check your CLASSPATH.");
+      cnfe.printStackTrace(System.err);
+    } catch (InstantiationException ie) {
+      System.err.println("\nUnable to instantiate the JDBC driver " + driver);
+      ie.printStackTrace(System.err);
+    } catch (IllegalAccessException iae) {
+      System.err.println("\nNot allowed to access the JDBC driver " + driver);
+      iae.printStackTrace(System.err); 
     }
   }
 
