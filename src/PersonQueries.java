@@ -12,7 +12,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,16 +21,28 @@ public class PersonQueries {
   private static final String url = "jdbc:sqlite:addressbook.db";
 
   private Connection connection = null; // manages connection
+  private PreparedStatement createNewTable = null;
   private PreparedStatement selectAllPeople = null;
   private PreparedStatement selectPeopleByLastName = null;
   private PreparedStatement insertNewPerson = null;
 
   // constructor
   public PersonQueries() {
-
     try {
       Class.forName(driver).newInstance();
       connection = DriverManager.getConnection(url);
+      // create query that create a new table for AddressBook
+      createNewTable =
+          connection.prepareStatement(
+              "CREATE TABLE IF NOT EXISTS Addresses" +
+              "( addressID integer," +
+              "firstName text NOT NULL," +
+              "lastName text," +
+              "email text," +
+              "phoneNumber text," +
+              "PRIMARY KEY(addressID)" +
+              ")");
+      createNewTable.execute();
       // create query that selects all entries in the AddressBook
       selectAllPeople =
           connection.prepareStatement(

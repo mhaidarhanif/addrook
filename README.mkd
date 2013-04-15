@@ -16,10 +16,10 @@ NPM:    54411850
 Name:   M Haidar Hanif
 
 ID:     Task Six
-Create: Object-oriented application with UML
+Create: Object-oriented application with UML and Database
 Docs:   Java™ How to Program, Seventh Edition & OOAD_Example
 Chap:   2 & 3. Software Engineering Case Study
-Page:   63 - 522 & 1215 - x
+Page:   63 - 522 & 1215 - *
 Date:   April 2013
 ```
 
@@ -35,7 +35,9 @@ Date:   April 2013
 ```
 addrook
 ├── src
+├── lib
 ├── out
+├── diagrams
 ├── .idea
 ├── .git
 ├── addrook.iml
@@ -51,9 +53,9 @@ Learning Step
 
 1. Object-Oriented Programming
 2. Java Programming Language
-3. Unified Modeling Language
-4. GUI Application
-5. SQL Database
+3. Unified Modeling Language Diagram
+4. GUI Application with Swing
+5. SQL Database with SQLite
 
 *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
 
