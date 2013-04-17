@@ -17,7 +17,7 @@ The array version is more advanced and did a better job handling the data becaus
 
 ```
 Title:  Addrook
-Ver:    0
+Ver:    1.0
 Desc:   Simple address book simulator with basic features
 
 Class:  SMTI06
