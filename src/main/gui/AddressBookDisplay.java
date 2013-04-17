@@ -1,3 +1,5 @@
+package main.gui;
+
 /**
  * SMTI06, 54411850, M Haidar Hanif
  * Task Six: Address Book
@@ -15,6 +17,9 @@ import java.awt.event.WindowEvent;
 import java.util.List;
 
 import javax.swing.*;
+
+import main.java.Person;
+import main.java.PersonQueries;
 
 public class AddressBookDisplay extends JFrame {
 

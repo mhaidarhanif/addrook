@@ -1,3 +1,5 @@
+package main.java;
+
 /**
  * SMTI06, 54411850, M Haidar Hanif
  * Task Six: Address Book
