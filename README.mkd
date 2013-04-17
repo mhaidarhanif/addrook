@@ -5,11 +5,13 @@ Addrook
 
 This version has both database and array based version. A new JAR file can be obtained by building a JAR artifact with correspond manifest and library, this can be done easilty through any JAR building method such as IntelliJ IDEA JAR builder. Since the GUI layout and components are only using provided Java standard library, this project can be develop anywhere. No client server but SQLite JDBC library is needed as the database version is using SQLite. Therefore, for debugging purpose SQL command code file is included in source.
 
-Every main class is postnamed with App and located in gui subpackage:
+Every main class is postnamed with App and located in `main.gui` package:
 
 - Array: `AddrookArrayApp.java`
 - Database: `AddrookSimpleDBApp.java`
 - Improved Database: `AddrookDBApp.java`
+
+The simple database version is so simple, it just works to insert, browse, and find. It's only using one single database file and create `addressbook.db` automatically when it doesn't exists.
 
 The array version is more advanced and did a better job handling the data because the required data is still a few, though it's harder to maintain. But in advantage, the storage footprint file is smaller in byte size. Its original code acknowledgment is stated in each its Java source file header comment. This one will be continued to develop toward the real database version.
 
