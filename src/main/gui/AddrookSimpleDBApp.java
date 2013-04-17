@@ -1,9 +1,17 @@
 package main.gui;
 
 /**
- * SMTI06, 54411850, M Haidar Hanif
- * Task Six: Address Book
- * Addrook | Simple address book simulator with basic features
+ * Part of Addrook
+ * Simple address book simulator with basic features
+ *
+ * Improvement:
+ * M Haidar Hanif
+ *
+ * Origin:
+ * Paul Deitel & Harvey Deitel (c) 2006
+ *   Java How to Program, 7th Edition
+ * Russell C. Bjork (c) 2004-2005
+ *   CPS211: Object-Oriented Software Development
  */
 
 // AddrookSimpleDBApp.java
@@ -54,7 +62,7 @@ public class AddrookSimpleDBApp extends JFrame {
 
   // no-argument constructor
   public AddrookSimpleDBApp() {
-    super("Address Book");
+    super("Addrook | addressbook");
 
     // establish database connection and set up PreparedStatements
     personQueries = new PersonQueries();
@@ -140,12 +148,12 @@ public class AddrookSimpleDBApp extends JFrame {
     lastNameLabel.setText("Last Name:");
     displayPanel.add(lastNameLabel);
     displayPanel.add(lastNameTextField);
-    emailLabel.setText("Email:");
-    displayPanel.add(emailLabel);
-    displayPanel.add(emailTextField);
     phoneLabel.setText("Phone Number:");
     displayPanel.add(phoneLabel);
     displayPanel.add(phoneTextField);
+    emailLabel.setText("Email:");
+    displayPanel.add(emailLabel);
+    displayPanel.add(emailTextField);
     add(displayPanel);
 
     queryPanel.setLayout(
@@ -227,11 +235,11 @@ public class AddrookSimpleDBApp extends JFrame {
     if (numberOfEntries != 0) {
       currentEntryIndex = 0;
       currentEntry = results.get(currentEntryIndex);
-      idTextField.setText("" + currentEntry.getAddressID());
+      idTextField.setText("" + currentEntry.getPersonID());
       firstNameTextField.setText(currentEntry.getFirstName());
       lastNameTextField.setText(currentEntry.getLastName());
       emailTextField.setText(currentEntry.getEmail());
-      phoneTextField.setText(currentEntry.getPhoneNumber());
+      phoneTextField.setText(currentEntry.getPhone());
       maxTextField.setText("" + numberOfEntries);
       indexTextField.setText("" + (currentEntryIndex + 1));
       nextButton.setEnabled(true);
@@ -246,11 +254,11 @@ public class AddrookSimpleDBApp extends JFrame {
     currentEntryIndex = (Integer.parseInt(indexTextField.getText()) - 1);
     if (numberOfEntries != 0 && currentEntryIndex < numberOfEntries) {
       currentEntry = results.get(currentEntryIndex);
-      idTextField.setText("" + currentEntry.getAddressID());
+      idTextField.setText("" + currentEntry.getPersonID());
       firstNameTextField.setText(currentEntry.getFirstName());
       lastNameTextField.setText(currentEntry.getLastName());
       emailTextField.setText(currentEntry.getEmail());
-      phoneTextField.setText(currentEntry.getPhoneNumber());
+      phoneTextField.setText(currentEntry.getPhone());
       maxTextField.setText("" + numberOfEntries);
       indexTextField.setText("" + (currentEntryIndex + 1));
     }
@@ -264,11 +272,11 @@ public class AddrookSimpleDBApp extends JFrame {
       if (numberOfEntries != 0) {
         currentEntryIndex = 0;
         currentEntry = results.get(currentEntryIndex);
-        idTextField.setText("" + currentEntry.getAddressID());
+        idTextField.setText("" + currentEntry.getPersonID());
         firstNameTextField.setText(currentEntry.getFirstName());
         lastNameTextField.setText(currentEntry.getLastName());
         emailTextField.setText(currentEntry.getEmail());
-        phoneTextField.setText(currentEntry.getPhoneNumber());
+        phoneTextField.setText(currentEntry.getPhone());
         maxTextField.setText("" + numberOfEntries);
         indexTextField.setText("" + (currentEntryIndex + 1));
         nextButton.setEnabled(true);
@@ -284,7 +292,7 @@ public class AddrookSimpleDBApp extends JFrame {
   private void insertButtonActionPerformed(ActionEvent evt) {
     int result =
         personQueries.addPerson(firstNameTextField.getText(), lastNameTextField.getText(),
-                                emailTextField.getText(), phoneTextField.getText());
+                                phoneTextField.getText(), emailTextField.getText());
     if (result == 1) {
       JOptionPane.showMessageDialog(this, "Person added!", "Person added",
                                     JOptionPane.PLAIN_MESSAGE);

@@ -5,6 +5,7 @@ misc/
 tmp/
 *.swp
 *.jar
+*.db
 
 # Backup files
 *.un~

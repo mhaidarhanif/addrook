@@ -1,9 +1,17 @@
 package main.java;
 
 /**
- * SMTI06, 54411850, M Haidar Hanif
- * Task Six: Address Book
- * Addrook | Simple address book simulator with basic features
+ * Part of Addrook
+ * Simple address book simulator with basic features
+ *
+ * Improvement:
+ * M Haidar Hanif
+ *
+ * Origin:
+ * Paul Deitel & Harvey Deitel (c) 2006
+ *   Java How to Program, 7th Edition
+ * Russell C. Bjork (c) 2004-2005
+ *   CPS211: Object-Oriented Software Development
  */
 
 // PersonQueries.java
@@ -20,7 +28,7 @@ import java.util.List;
 public class PersonQueries {
 
   public static final String driver = "org.sqlite.JDBC";
-  private static final String url = "jdbc:sqlite:addressbook.db";
+  private static final String url = "jdbc:sqlite:addrookpeople.db";
 
   private Connection connection = null; // manages connection
   private PreparedStatement createNewTable = null;
@@ -36,47 +44,51 @@ public class PersonQueries {
       // create query that create a new table for AddressBook
       createNewTable =
           connection.prepareStatement(
-              "CREATE TABLE IF NOT EXISTS Addresses" +
-              "( addressID integer," +
-              "firstName text NOT NULL," +
-              "lastName text," +
-              "email text," +
-              "phoneNumber text," +
-              "PRIMARY KEY(addressID)" +
+              "CREATE TABLE IF NOT EXISTS People" +
+              "( PersonID integer," +
+              "FirstName text NOT NULL," +
+              "LastName text," +
+              "Address text," +
+              "City text," +
+              "State text," +
+              "ZIP text," +
+              "Phone text," +
+              "Email text," +
+              "PRIMARY KEY(PersonID)" +
               ")");
       createNewTable.execute();
       // create query that selects all entries in the AddressBook
       selectAllPeople =
           connection.prepareStatement(
-              "SELECT * FROM Addresses");
+              "SELECT * FROM People");
       // create query that selects entries with a specific last name
       selectPeopleByLastName =
           connection.prepareStatement(
-              "SELECT * FROM Addresses WHERE LastName = ?");
+              "SELECT * FROM People WHERE LastName = ?");
       // create insert that adds a new entry into the database
       insertNewPerson =
           connection.prepareStatement(
-              "INSERT INTO Addresses " +
-              "( FirstName, LastName, Email, PhoneNumber ) " +
-              "VALUES ( ?, ?, ?, ? )");
+              "INSERT INTO People " +
+              "( FirstName, LastName, Address, City, State, ZIP, Phone, Email ) " +
+              "VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )");
     } catch (SQLException sqle) {
-      System.err.println("\nUnable to use SQL " + driver);
+      System.err.println("\nUnable to use SQL\n" + driver);
       sqle.printStackTrace();
       sqle.printStackTrace(System.err);
     } catch (ClassNotFoundException cnfe) {
-      System.err.println("\nUnable to load the JDBC driver " + driver);
-      System.err.println("Please check your CLASSPATH.");
+      System.err.println("\nUnable to load the JDBC driver\n" + driver);
+      System.err.println("\nPlease check your CLASSPATH.");
       cnfe.printStackTrace(System.err);
     } catch (InstantiationException ie) {
-      System.err.println("\nUnable to instantiate the JDBC driver " + driver);
+      System.err.println("\nUnable to instantiate the JDBC driver\n" + driver);
       ie.printStackTrace(System.err);
     } catch (IllegalAccessException iae) {
-      System.err.println("\nNot allowed to access the JDBC driver " + driver);
+      System.err.println("\nNot allowed to access the JDBC driver\n" + driver);
       iae.printStackTrace(System.err); 
     }
   }
 
-  // select all of the addresses in the database
+  // select all of the person information in the database
   public List<Person> getAllPeople() {
     List<Person> results = null;
     ResultSet resultSet = null;
@@ -86,11 +98,16 @@ public class PersonQueries {
       results = new ArrayList<Person>();
       while (resultSet.next()) {
         results.add(new Person(
-            resultSet.getInt("addressID"),
-            resultSet.getString("firstName"),
-            resultSet.getString("lastName"),
-            resultSet.getString("email"),
-            resultSet.getString("phoneNumber")));
+            resultSet.getInt("PersonID"),
+            resultSet.getString("FirstName"),
+            resultSet.getString("LastName"),
+            resultSet.getString("Address"),
+            resultSet.getString("City"),
+            resultSet.getString("State"),
+            resultSet.getString("ZIP"),
+            resultSet.getString("Phone"),
+            resultSet.getString("Email")
+            ));
       }
     } catch (SQLException sqlException) {
       sqlException.printStackTrace();
@@ -116,11 +133,15 @@ public class PersonQueries {
       results = new ArrayList<Person>();
       while (resultSet.next()) {
         results.add(new Person(
-            resultSet.getInt("addressID"),
-            resultSet.getString("firstName"),
-            resultSet.getString("lastName"),
-            resultSet.getString("email"),
-            resultSet.getString("phoneNumber")));
+            resultSet.getInt("PersonID"),
+            resultSet.getString("FirstName"),
+            resultSet.getString("LastName"),
+            resultSet.getString("Address"),
+            resultSet.getString("City"),
+            resultSet.getString("State"),
+            resultSet.getString("ZIP"),
+            resultSet.getString("Phone"),
+            resultSet.getString("Email")));
       }
     } catch (SQLException sqlException) {
       sqlException.printStackTrace();
@@ -136,14 +157,18 @@ public class PersonQueries {
   }
 
   // add an entry
-  public int addPerson(String fname, String lname, String email, String num) {
+  public int addPerson(String first, String last, String phone, String email) {
     int result = 0;
     // set parameters, then execute insertNewPerson
     try {
-      insertNewPerson.setString(1, fname);
-      insertNewPerson.setString(2, lname);
-      insertNewPerson.setString(3, email);
-      insertNewPerson.setString(4, num);
+      insertNewPerson.setString(1, first);
+      insertNewPerson.setString(2, last);
+      insertNewPerson.setString(3, "address");
+      insertNewPerson.setString(4, "city");
+      insertNewPerson.setString(5, "state");
+      insertNewPerson.setString(6, "zip");
+      insertNewPerson.setString(7, phone);
+      insertNewPerson.setString(8, email);
       // insert the new entry; returns # of rows updated
       result = insertNewPerson.executeUpdate();
     } catch (SQLException sqlException) {
