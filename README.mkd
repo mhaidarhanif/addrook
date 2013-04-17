@@ -13,7 +13,7 @@ Every main class is postnamed with App and located in `main.gui` package:
 
 The simple database version is so simple, it just works to insert, browse, and find. It's only using one single database file and create `addressbook.db` automatically when it doesn't exists.
 
-The array version is more advanced and did a better job handling the data because the required data is still a few, though it's harder to maintain. But in advantage, the storage footprint file is smaller in byte size. Its original code acknowledgment is stated in each its Java source file header comment. This one will be continued to develop toward the real database version.
+The array version is more advanced and did a better job handling the data because the required data is still a few, though it's harder to maintain. But in advantage, the storage footprint file is smaller in byte size. Its original base code acknowledgment is stated in each its Java source file header comment. Most code consists from several different sources then improved for specific purpose. This one will be continued to develop toward the real database version.
 
 ### Identification
 
