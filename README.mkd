@@ -3,12 +3,21 @@ Addrook
 
 ### Important Notes
 
-TODO
+This version has both database and array based version. A new JAR file can be obtained by building a JAR artifact with correspond manifest and library, this can be done easilty through any JAR building method such as IntelliJ IDEA JAR builder. Since the GUI layout and components are only using provided Java standard library, this project can be develop anywhere. No client server but SQLite JDBC library is needed as the database version is using SQLite. Therefore, for debugging purpose SQL command code file is included in source.
+
+Every main class is postnamed with App and located in gui subpackage:
+
+- Array: `AddrookArrayApp.java`
+- Database: `AddrookSimpleDBApp.java`
+- Improved Database: `AddrookDBApp.java`
+
+The array version is more advanced and did a better job handling the data because the required data is still a few, though it's harder to maintain. But in advantage, the storage footprint file is smaller in byte size. Its original code acknowledgment is stated in each its Java source file header comment. This one will be continued to develop toward the real database version.
 
 ### Identification
 
 ```
 Title:  Addrook
+Ver:    0
 Desc:   Simple address book simulator with basic features
 
 Class:  SMTI06
@@ -16,7 +25,6 @@ NPM:    54411850
 Name:   M Haidar Hanif
 
 ID:     Task Six
-Create: Object-oriented application with UML and Database
 Docs:   Java™ How to Program, Seventh Edition & OOAD_Example
 Chap:   2 & 3. Software Engineering Case Study
 Page:   63 - 522 & 1215 - *
@@ -26,9 +34,10 @@ Date:   April 2013
 ### Objectives
 
 - Address Book
-- Person database
-- SQL queries
-- GUI application
+- UML Diagrams
+- Person Database
+- SQL Queries
+- GUI Application
 
 ### Project Structure
 
@@ -74,7 +83,7 @@ Requirements
 Resource
 --------
 
-Source code released under [MIT License](LICENSE) and available in [GitHub repository](https://github.com/mhaidarh/addrook).
+Some source code released under [MIT License](LICENSE) and available in [GitHub repository](https://github.com/mhaidarh/addrook).
 
 Graphics released under [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-nc-sa/3.0).
 
