@@ -7,10 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d14d01c4-7ce4-4f9c-9133-760573bcbbdf" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AddressBookDisplay.java" afterPath="$PROJECT_DIR$/src/main/gui/AddressBookDisplay.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Person.java" afterPath="$PROJECT_DIR$/src/main/java/Person.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/PersonQueries.java" afterPath="$PROJECT_DIR$/src/main/java/PersonQueries.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/addressbook.sql" afterPath="$PROJECT_DIR$/src/main/db/addressbook.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.mkd" afterPath="$PROJECT_DIR$/README.mkd" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -20,6 +16,7 @@
     <file path="/PersonQueries.java" changelist="d14d01c4-7ce4-4f9c-9133-760573bcbbdf" time="1366169300243" ignored="false" />
     <file path="/Person.java" changelist="d14d01c4-7ce4-4f9c-9133-760573bcbbdf" time="1365270578063" ignored="false" />
     <file path="/fragment.java" changelist="d14d01c4-7ce4-4f9c-9133-760573bcbbdf" time="1366169402399" ignored="false" />
+    <file path="/AddrookSimpleDBApp.java" changelist="d14d01c4-7ce4-4f9c-9133-760573bcbbdf" time="1366169923687" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,8 +98,9 @@
         <option value="$PROJECT_DIR$/src/AddressBookDisplay.java" />
         <option value="$PROJECT_DIR$/src/DBManager.java" />
         <option value="$PROJECT_DIR$/src/PersonQueries.java" />
-        <option value="$PROJECT_DIR$/src/main/java/PersonQueries.java" />
         <option value="$PROJECT_DIR$/src/main/gui/AddressBookDisplay.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PersonQueries.java" />
+        <option value="$PROJECT_DIR$/src/main/gui/AddrookSimpleDBApp.java" />
       </list>
     </option>
   </component>
@@ -114,6 +112,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="-1366" />
     <option name="y" value="-744" />
     <option name="width" value="1366" />
     <option name="height" value="744" />
@@ -387,7 +386,7 @@
       <method />
     </configuration>
     <configuration default="false" name="LaunchBook" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="main.gui.AddressBookDisplay" />
+      <option name="MAIN_CLASS_NAME" value="main.gui.AddrookSimpleDBApp" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -420,7 +419,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-744" width="1366" height="744" extended-state="6" />
+    <frame x="-1366" y="-744" width="1366" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -438,7 +437,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17575757" sideWeight="0.5099846" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18030304" sideWeight="0.67127496" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49001536" sideWeight="0.49921507" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="101" y="146" width="1166" height="544" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -537,7 +536,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/gui/AddressBookDisplay.java">
+    <entry file="file://$PROJECT_DIR$/src/main/gui/AddrookSimpleDBApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="54" selection-start="678" selection-end="678" vertical-scroll-proportion="0.0">
           <folding />
@@ -560,7 +559,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/gui/AddressBookDisplay.java">
+    <entry file="file://$PROJECT_DIR$/src/main/gui/AddrookSimpleDBApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="219" column="65" selection-start="7450" selection-end="7450" vertical-scroll-proportion="0.0">
           <folding />
@@ -574,7 +573,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/gui/AddressBookDisplay.java">
+    <entry file="file://$PROJECT_DIR$/src/main/gui/AddrookSimpleDBApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
@@ -588,7 +587,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/gui/AddressBookDisplay.java">
+    <entry file="file://$PROJECT_DIR$/src/main/gui/AddrookSimpleDBApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
@@ -602,32 +601,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/gui/AddressBookDisplay.java">
+    <entry file="file://$PROJECT_DIR$/src/main/db/addressbook.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="10" column="44" selection-start="194" selection-end="194" vertical-scroll-proportion="0.24">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="153" selection-end="153" vertical-scroll-proportion="0.168">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/PersonQueries.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="22" column="30" selection-start="557" selection-end="557" vertical-scroll-proportion="0.4048">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Person.java">
+    <entry file="file://$PROJECT_DIR$/src/main/gui/AddrookSimpleDBApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="244" selection-end="244" vertical-scroll-proportion="0.264">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/db/addressbook.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="44" selection-start="194" selection-end="194" vertical-scroll-proportion="0.24">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

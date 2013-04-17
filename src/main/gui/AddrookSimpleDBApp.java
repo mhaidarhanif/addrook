@@ -6,8 +6,8 @@ package main.gui;
  * Addrook | Simple address book simulator with basic features
  */
 
-// AddressBookDisplay.java
-// A simple address book
+// AddrookSimpleDBApp.java
+// A simple address book with SQLite database and GUI.
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -21,7 +21,7 @@ import javax.swing.*;
 import main.java.Person;
 import main.java.PersonQueries;
 
-public class AddressBookDisplay extends JFrame {
+public class AddrookSimpleDBApp extends JFrame {
 
   private Person currentEntry;
   private PersonQueries personQueries;
@@ -53,7 +53,7 @@ public class AddressBookDisplay extends JFrame {
   private JButton insertButton;
 
   // no-argument constructor
-  public AddressBookDisplay() {
+  public AddrookSimpleDBApp() {
     super("Address Book");
 
     // establish database connection and set up PreparedStatements
@@ -297,7 +297,7 @@ public class AddressBookDisplay extends JFrame {
 
   // main method
   public static void main(String args[]) {
-    new AddressBookDisplay();
+    new AddrookSimpleDBApp();
   }
 
 }

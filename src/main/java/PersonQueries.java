@@ -7,7 +7,7 @@ package main.java;
  */
 
 // PersonQueries.java
-// PreparedStatements used by the Address Book application
+// PreparedStatements used by the Address Book application.
 
 import java.sql.Connection;
 import java.sql.DriverManager;
